@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信聊天界面</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- 聊天头部 -->
+        <div class="chat-header">
+            <div class="back-icon">⇐</div>
+            <div class="chat-title">好友名称</div>
+            <div class="more-icon">...</div>
+        </div>
+
+        <!-- 消息列表 -->
+        <div class="message-list" id="message-list">
+            <!-- 消息示例 -->
+            <div class="message-item incoming">
+                <div class="avatar">A</div>
+                <div class="bubble">你好，这是聊天界面的示例！</div>
+            </div>
+            <div class="message-item outgoing">
+                <div class="bubble">你好！</div>
+            </div>
+        </div>
+
+        <!-- 输入框和发送按钮 -->
+        <div class="input-area">
+            <input type="text" id="message-input" placeholder="输入消息...">
+            <button onclick="sendMessage()">发送</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            if (message === '') return;
+
+            // 创建消息元素
+            const messageItem = document.createElement('div');
+            messageItem.classList.add('message-item', 'outgoing');
+            messageItem.innerHTML = `<div class="bubble">${message}</div>`;
+
+            // 添加到消息列表
+            const messageList = document.getElementById('message-list');
+            messageList.appendChild(messageItem);
+
+            // 清空输入框
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
