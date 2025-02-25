@@ -47,10 +47,6 @@ wechat-chat-interface/
 - **CSS**：用于实现页面样式和布局。
 - **JavaScript**：用于实现消息发送和动态显示功能。
 
-## 示例图片
-
-![微信聊天界面示例](https://via.placeholder.com/400x600?text=WeChat+Chat+Interface)
-
 ## 扩展功能建议
 
 1. **表情支持**：
